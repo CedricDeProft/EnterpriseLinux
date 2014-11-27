@@ -54,7 +54,7 @@ De naam van de rol die je zal installeren zal je nog aanvullen in het volgende b
 Gaan kijken in  ```man-tests ```
 
 
-Wat het doet| Commando
+Uitleg | Commando
 ----------| -------------------
 Begin van testen| ```$(cmd) wordt opgevangen in een andere variabele result=$()```
 Logische expressies | ```[  -n =test  ```
@@ -65,9 +65,13 @@ Runnen van een bash scirpt | ``` ./scriptnaam.sh ```
 Package vinden op commando | ```yum provides *bin/dig```
 Logfiles opvragen van een bepaalde service | ```sudo journal ctl -f -u named.service```
 
-##DNS
+#DNS
 Uitleg | Commando's
 --------------|----------------
  vraagt A record op |```dig @192.0.2.2 pu001.linuxlab.net```
 vraagt NS record op | ```dig @192.0.2.2 pu001.linuxlab.net NS```
 vraagt NS record op (ip adres only) | ```dig @192.0.2.2 pu001.linuxlab.net NS +short```
+
+#Samba
+Uitleg | Commando's
+--------------|----------------
