@@ -2,8 +2,7 @@
  
  beschrijving| Commando
  ----------| -------------------
- 
- Toevoegen van een bestand aan vagrant| ```vagrant box add```
+  Toevoegen van een bestand aan vagrant| ```vagrant box add```
  Vagrantfile aanmaken | ```vagrant init (naam)```
  Toevoegen machine aan virtualbox | ```vagrant up```
  lijst actieve machines | ```vagrant status```
