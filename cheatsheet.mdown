@@ -1,0 +1,74 @@
+#Vagrant
+ 
+ beschrijving| Commando
+ ----------| -------------------
+ 
+ Toevoegen van een bestand aan vagrant| ```vagrant box add```
+ Vagrantfile aanmaken | ```vagrant init (naam)```
+ Toevoegen machine aan virtualbox | ```vagrant up```
+ lijst actieve machines | ```vagrant status```
+ Lijst van alle boxen |  ```vagrant boxlist```
+ nieuwe ifconfig | ```ip -a```
+ Vagrant file verwijderen| ```vagrant destroy```
+ Machine opslaan |```vagrant suspend```
+ Machine  uitschakelen | ```vagrant halt```
+ Inloggen via ssh | ```vagrant ssh```
+ Ctrl+d | ```gitbash```
+
+#Git
+
+```git add (naam)``` of ```git add --all```
+
+Status : git status (hiermee zie je de files die aangepast zijn en verwijderd enz)
+linken aan een repo: git add remote origin ...
+git pull -u origin master
+
+
+#Ansible
+Folder/file| plaats | Uitleg
+--------------|----------------|-------------
+folder|```./roles```| Hierin staan alle rollen
+  folder|```./roles/common```| alle standaard dingen zoals selinux, firewall,...
+folder|```./roles/'rol'/tasks```| hier hoort de main.yml
+folder|```./roles/'rol'/'...'```| Er kunnen hier nog andere mappen bij, bv handlers
+file|```./roles/'rol'/tasks/main.yml```| hier komt de modules in voor die taak
+file |```inventory_dev```| alle devices.
+file |```host_vars/nameserver```| variabelen over het gehele ansible project
+
+Voor een functie te installeren zal je dit in een .yml bestand moeten zetten. Deze zet je dan bij ./roles
+
+
+De naam van de rol die je zal installeren zal je nog aanvullen in het volgende bestand ```ansible/host_vars/site.yml```
+```vagrant provision ``` dit commando zal ervoor zorgen dat alle taken die je hebt vastgelegd worden overlopen en of ze gelukt zijn of niet
+
+
+#BATS
+ Wat het doet| Commando
+ ----------| -------------------
+ Begin van testen| ```@test```
+ Exit status : 0 | ```OK/true```
+ Exit status : 1-255 | ```niet OK/FALSE```
+ Runnen van bats | ```./bats/bin/bats srv001/testDNS.bats```
+
+
+#Fundamenten
+Gaan kijken in  ```man-tests ```
+
+
+Wat het doet| Commando
+----------| -------------------
+Begin van testen| ```$(cmd) wordt opgevangen in een andere variabele result=$()```
+Logische expressies | ```[  -n =test  ```
+Getallen gaan vergelijken |  ```-eq ```
+Kijken of string leeg is |  ```-z ```
+Kijken of string niet leeg is | ``` -n ```
+Runnen van een bash scirpt | ``` ./scriptnaam.sh ```
+Package vinden op commando | ```yum provides *bin/dig```
+Logfiles opvragen van een bepaalde service | ```sudo journal ctl -f -u named.service```
+
+##DNS
+Uitleg | Commando's
+--------------|----------------
+ vraagt A record op |```dig @192.0.2.2 pu001.linuxlab.net```
+vraagt NS record op | ```dig @192.0.2.2 pu001.linuxlab.net NS```
+vraagt NS record op (ip adres only) | ```dig @192.0.2.2 pu001.linuxlab.net NS +short```
