@@ -75,3 +75,5 @@ vraagt NS record op (ip adres only) | ```dig @192.0.2.2 pu001.linuxlab.net NS +s
 #Samba
 Uitleg | Commando's
 --------------|----------------
+#DHCP
+vagrant ssh>>> journalctl -u dhcpd.service
