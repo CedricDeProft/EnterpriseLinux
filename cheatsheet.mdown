@@ -78,4 +78,13 @@ Uitleg | Commando's
 #DHCP
 vagrant ssh>>> sudo journalctl -u dhcpd.service
 vagrant ssh>> cat /etc/dhcp/dhcpd.conf >> tonen van config file van dhcp
+
+
+#troubleshoot samba
 sudo loadkeys be-latin1>>>>> naar azerty
+sudo service nmb start>>>> starten van nmb service
+sudo service smb start>>>>> starten smb service
+shares nakijken>>>> smbclient -L localhost -U%
+config file verification>>>> testparam -s etc/samba/smb.conf
+scrollen in terminal>>>> shift+page down/up
+share permissies aanpassen in de 
