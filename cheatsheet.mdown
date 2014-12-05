@@ -78,3 +78,4 @@ Uitleg | Commando's
 #DHCP
 vagrant ssh>>> sudo journalctl -u dhcpd.service
 vagrant ssh>> cat /etc/dhcp/dhcpd.conf >> tonen van config file van dhcp
+sudo loadkeys be-latin1>>>>> naar azerty
